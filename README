@@ -1,0 +1,5 @@
+This plugin uses curl to get and post pages from mediawiki sites that are configured for basic authentication.
+
+Drop wiki.vim in your ~/.vim/plugins/, and edit for user, password (or do some other clever thing)
+
+Edit pages by prepending wiki: to their name, like so:  im wiki:Main_Page
