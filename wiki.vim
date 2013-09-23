@@ -19,7 +19,7 @@ function! s:WikiPageGET(page)
     let s:curlGET .= 'titles='.s:title.'&action=query&prop=revisions&rvprop=content&format=xml"'
     let s:wpGET = system(s:curlGET)
 
-    let s:wpTextList = split(matchstr(s:wpGET, '\c<revisions><rev>\zs.*\ze</rev></revisions'), '\n')
+    let s:wpTextList = split(matchstr(s:wpGET, '\c<revisions><rev contentformat="text/x-wiki" contentmodel="wikitext" xml:space="preserve">\zs.*\ze</rev></revisions'), '\n')
 
     silent 0,$delete
     call setline(1, s:wpTextList)
